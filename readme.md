@@ -15,6 +15,18 @@ $ npm install
 $ node index.js
 ```
 
+Once the script finishes, the saved data will be available in the `data.json` file, inside the `members` array.
+
+## Troubleshooting
+
+**The scraper hangs on `Scraping X`, where X is a number between 1 and 460.**
+
+Restart the script.
+
+## Notice
+
+Please note that running the scraping frequently and/or on multiple instances may be considered harmful for the server and therefore is not recommended. This software is provided as is for education and research purposes, granted the fair-use.
+
 ## License
 
 MIT
