@@ -41,7 +41,7 @@ export default function Home() {
   );
   const data = useMemo(
       () => {
-          const raw = require('../../data.json');
+          const raw = require('../data.json');
 
           return raw.members;
       },
@@ -128,9 +128,9 @@ export default function Home() {
                     })}
                     className="tr"
                 >
-                    {row.cells.map(cell => {
+                    {row.cells.map((cell, id) => {
                         return (
-                            <div {...cell.getCellProps()} className="td">
+                            <div key={id} {...cell.getCellProps()} className="td">
                                 {cell.render('Cell')}
                             </div>
                         )
@@ -145,10 +145,10 @@ export default function Home() {
       <Styles>
           <div {...getTableProps()} className="table">
               <div className="th">
-              {headerGroups.map(headerGroup => (
-                  <div {...headerGroup.getHeaderGroupProps()}>
-                      {headerGroup.headers.map(column => (
-                          <div {...column.getHeaderProps(column.getSortByToggleProps())}>
+              {headerGroups.map((headerGroup, id) => (
+                  <div key={id} {...headerGroup.getHeaderGroupProps()}>
+                      {headerGroup.headers.map((column, _id) => (
+                          <div key={_id} {...column.getHeaderProps(column.getSortByToggleProps())}>
                               {column.render('Header')}
                               {/* Add a sort direction indicator */}
                               <span>
